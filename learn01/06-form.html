@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+
+<!--
+表单用于搜集不同类型的用户输入。
+<form>
+
+表单元素指的是不同类型的input元素、复选框、单选按钮、提交按钮等。
+
+<input> 有很多形态。由type属性决定
+text  文本字段的默认宽度是 20 个字符。
+radio 定义单选按钮输入.  单选按钮允许用户在有限数量的选项中选择其中之一：
+
+submit 定义用于向表单处理程序（form-handler）提交表单的按钮。
+表单处理程序通常是包含用来处理输入数据的脚本的服务器页面。
+表单处理程序在表单的 action 属性中指定：
+
+action属性定义在提交表单时执行的动作。
+如果省略 action 属性，则 action 会被设置为当前页面。
+
+method 属性规定在提交表单时所用的 HTTP 方法（GET 或 POST）
+
+如果要正确地被提交，每个输入字段必须设置一个 name 属性。
+
+
+<form action="action_page.php" method="GET" target="_blank" accept-charset="UTF-8"
+ectype="application/x-www-form-urlencoded" autocomplete="off" novalidate>
+.
+form elements
+ .
+</form> 
+
+action  规定向何处提交表单的地址（URL）（提交页面）。
+method 在提交表单时所用的 HTTP 方法（默认：GET）。
+target  规定 action 属性中地址的目标（默认：_self）
+accept-charset 规定在提交表单中使用的字符集。
+ectype  规定被提交数据的编码（默认：url-encoded）。
+autocomplete 规定浏览器应该自动完成表单（默认：开启）。
+novalidate 规定浏览器不验证表单。
+name 规定识别表单的名称（对于 DOM 使用：document.forms.name）。
+
+
+表单元素：
+<select> 定义下拉列表
+textarea
+button
+
+HTML5新增的表单元素
+datalist
+keygen
+output
+
+
+<input>的type属性的属性值说明
+text 单行输入文本
+password 密码，密码字段中的字符被掩码（显示为星号或圆点）
+submit  提交按钮的 value 属性，那么该按钮将获得默认文本：
+radio 单选按钮
+checkbox 复选框
+button 按钮
+
+HTML5 增加了多个新的输入类型：
+color
+date
+datetime
+datetime-local
+email
+month
+number
+range
+search
+tel  目前只有 Safari 8 支持 tel 类型。
+time
+url
+week
+
+老式 web 浏览器不支持的输入类型，会被视为输入类型 text。
+
+
+Input属性
+value 属性规定输入字段的初始值
+readonly 属性规定输入字段为只读（不能修改）
+
+
+disabled 属性规定输入字段是禁用的。
+被禁用的元素是不可用和不可点击的。
+被禁用的元素不会被提交。
+
+size 属性规定输入字段的尺寸（以字符计）
+maxlength 属性规定输入字段允许的最大长度
+
+输入限制并非万无一失。JavaScript 提供了很多方法来增加非法输入。如需安全地限制输入，则接受者（服务器）必须同时对限制进行检查。
+
+
+HTML5 为 <input> 增加了如下属性：
+autocomplete
+autofocus
+form
+formaction
+formenctype
+formmethod
+formnovalidate
+formtarget
+height 和 width
+list
+min 和 max
+multiple
+pattern (regexp)
+placeholder
+required
+step
+并为 <form> 增加如需属性：
+autocomplete
+novalidate
+
+
+
+autocomplete 属性规定表单或输入字段是否应该自动完成。
+当自动完成开启，浏览器会基于用户之前的输入值自动填写值。
+提示：您可以把表单的 autocomplete 设置为 on，同时把特定的输入字段设置为 off，反之亦然。
+autocomplete 属性适用于 <form> 以及如下 <input> 类型：text、search、url、tel、email、password、datepickers、range 以及 color。
+
+提示：在某些浏览器中，您也许需要手动启用自动完成功能。
+
+
+autofocus 属性是布尔属性。
+如果设置，则规定当页面加载时 <input> 元素应该自动获得焦点。
+
+
+form 属性规定 <input> 元素所属的一个或多个表单。
+提示：如需引用一个以上的表单，请使用空格分隔的表单 id 列表。
+
+
+formaction 属性规定当提交表单时处理该输入控件的文件的 URL。
+formaction 属性覆盖 <form> 元素的 action 属性。
+formaction 属性适用于 type="submit" 以及 type="image"。
+
+
+formenctype 属性规定当把表单数据（form-data）提交至服务器时如何对其进行编码（仅针对 method="post" 的表单）。
+formenctype 属性覆盖 <form> 元素的 enctype 属性。
+formenctype 属性适用于 type="submit" 以及 type="image"。
+
+formmethod 属性定义用以向 action URL 发送表单数据（form-data）的 HTTP 方法。
+formmethod 属性覆盖 <form> 元素的 method 属性。
+formmethod 属性适用于 type="submit" 以及 type="image"。
+
+
+novalidate 属性是布尔属性。
+如果设置，则规定在提交表单时不对 <input> 元素进行验证。
+formnovalidate 属性覆盖 <form> 元素的 novalidate 属性。
+formnovalidate 属性可用于 type="submit"。
+
+formtarget 属性规定的名称或关键词指示提交表单后在何处显示接收到的响应。
+formtarget 属性会覆盖 <form> 元素的 target 属性。
+formtarget 属性可与 type="submit" 和 type="image" 使用。
+
+
+height 和 width 属性规定 <input> 元素的高度和宽度。
+height 和 width 属性仅用于 <input type="image">。
+注释：请始终规定图像的尺寸。如果浏览器不清楚图像尺寸，则页面会在图像加载时闪烁。
+默认地，image 输入类型会发生点击图像按钮时的 X 和 Y 坐标
+
+list 属性引用的 <datalist> 元素中包含了 <input> 元素的预定义选项。
+
+min 和 max 属性规定 <input> 元素的最小值和最大值。
+min 和 max 属性适用于如需输入类型：number、range、date、datetime、datetime-local、month、time 以及 week。
+
+multiple 属性是布尔属性。
+如果设置，则规定允许用户在 <input> 元素中输入一个以上的值。
+multiple 属性适用于以下输入类型：email 和 file。
+
+pattern 属性规定用于检查 <input> 元素值的正则表达式。
+pattern 属性适用于以下输入类型：text、search、url、tel、email、and password。
+提示：请使用全局的 title 属性对模式进行描述以帮助用户。
+提示：请在我们的 JavaScript 教程中学习更多有关正则表达式的知识。
+
+placeholder 属性规定用以描述输入字段预期值的提示（样本值或有关格式的简短描述）。
+该提示会在用户输入值之前显示在输入字段中。
+placeholder 属性适用于以下输入类型：text、search、url、tel、email 以及 password。
+
+
+required 属性是布尔属性。
+如果设置，则规定在提交表单之前必须填写输入字段。
+required 属性适用于以下输入类型：text、search、url、tel、email、password、date pickers、number、checkbox、radio、and file.
+
+
+step 属性规定 <input> 元素的合法数字间隔。
+示例：如果 step="3"，则合法数字应该是 -3、0、3、6、等等。
+提示：step 属性可与 max 以及 min 属性一同使用，来创建合法值的范围。
+step 属性适用于以下输入类型：number、range、date、datetime、datetime-local、month、time 以及 week。
+
+-->
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>表单学习</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+
+    <form action="" method="get" id="form1">
+        <fieldset>
+            <legend>个人信息：</legend>
+            FirstName:
+            <br/>
+            <input type="text" name="firstname">
+            <br/> LastName:
+            <br/>
+            <input type="text" name="lastname">
+            <br/>
+            <br/>
+
+            <input type="radio" name="sex" value="male" checked="checked">Male
+            <br/>
+            <input type="radio" name="sex" value="female">Female
+            <br/>
+            <br/>
+            <br/>
+
+            <!--
+			<option> 元素定义待选择的选项。
+列表通常会把首个选项显示为被选选项。
+您能够通过添加 selected 属性来定义预定义选项。
+			-->
+            <select name="cars">
+                <option value="volvo">Volvo</option>
+                <option value="saab">Saab</option>
+                <option value="audi" selected="selected">Audi</option>
+            </select>
+            <br/>
+            <br/>
+
+            <!--
+			textarea元素定义多行输入字段
+	
+			-->
+            <textarea name="message" rows="10" cols="30">The cat was playing in the garden.</textarea>
+            <br/>
+            <br/>
+
+            <!--
+			button 
+			-->
+            <button type="button" onclick="alert('Hello World! ')">我是button</button>
+            <br/>
+            <br/>
+
+            <button type="submit">submit</button>
+            <br/>
+            <br/>
+
+            <button type="reset">reset</button>
+<br/><br/>
+
+            <!--
+			datalist> 元素为 <input> 元素规定预定义选项列表。
+用户会在他们输入数据时看到预定义选项的下拉列表。
+<input> 元素的 list 属性必须引用 <datalist> 元素的 id 属性。
+			-->
+            <input list="browsers">
+            <datalist id="browsers">
+                <option value="Internet Explorer">
+                <option value="Firefox">
+                <option value="Chrome">
+                <option value="Opera">
+                <option value="Safari">
+            </datalist>
+
+
+<!--注释：Safari 或 IE9（以及更早的版本）不支持 datalist 标签。-->
+
+<br/><br/>
+
+<input type="checkbox" name="vehicle" value="Bike" />I have a bike
+<br>
+<input type="checkbox" name="vehicle" value="Car" />I have a car
+<br/><br/>
+
+<input type="button" onclick="alert('Hello!')" value="Click Me!" />
+<br/><br/>
+
+<input type="number" name="quantity" min="0" max="100" step="5" value="10"/>
+<br/><br/>
+
+<!--注释：Firefox 或者 Internet Explorer 11 以及更早版本不支持 type="date"-->
+<input type="date" name="bday" min="2018-01-01" max="2018-06-15" value="2018-01-01"/>
+<br/><br/>
+
+ Select your favorite color:
+  <input type="color" name="favcolor">
+<br/><br/>
+  
+  <input type="range" name="points" min="0" max="10">
+<br/><br/>
+
+  <input type="month" name="bdaymonth">
+  <br/><br/>
+
+   E-mail:
+  <input type="email" name="email">
+ <br/><br/> 
+ 
+  Search Google:
+  <input type="search" name="googlesearch">
+  <br/><br/> 
+
+   Telephone:
+  <input type="tel" name="usrtel">
+  <br/><br/> 
+  
+  Add your homepage:
+  <input type="url" name="homepage">
+  <br/><br/> 
+  
+Country code: 
+<input type="text" name="country_code" pattern="[A-Za-z]{3}" title="Three letter country code">  
+            <br/>
+            <br/>
+            <input type="submit" value="提交">
+            <br/>
+
+
+
+
+
+
+        </fieldset>
+
+
+    </form>
+	
+	 mid name: <input type="text" name="midname" form="form1">
+
+</body>
+
+</html>

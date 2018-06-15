@@ -1,6 +1,7 @@
  
 <!DOCTYPE html>
-<!--DTD文档声明 -->
+<!--DTD文档声明 
+<!DOCTYPE> 不是 HTML 标签。它为浏览器提供一项信息（声明），即 HTML 是用什么版本编写的。-->
 <html>
 	<!-- head标签，用于给网站添加一些配置信息
 			如：指定网页的标题，小图片；
@@ -179,6 +180,7 @@ ins与u标签含义相同-->
 	</div>
 	<div style="background: cadetblue;">
 		<!-- 表格
+		<table> 元素的作用是显示表格化的数据。
 		<table>定义表格，<tr>定义行，<td>定义单元格，
 		字母 td 指表格数据（table data），即数据单元格的内容。
 		数据单元格可以包含文本、图片、列表、段落、表单、水平线、表格等等.
@@ -189,13 +191,17 @@ ins与u标签含义相同-->
 		细线表格？
 		单元格内容的位置？
 		
-		表头？
-		表尾？<tfoot></tfoot>
+		表头？th
+		页眉？<thead>
+		页脚？<tfoot></tfoot>
+		<col> 	定义用于表格列的属性。
+		<colgroup> 定义表格列的组。
 		
 		单元格合并? rowspan 合并两行，colspan 合并两列
+		frame属性？值有box above below  hsides  vsides
 		
 		-->
-		<table border="1" cellspacing="0" bgcolor="#808080" >
+		<table border="1" cellspacing="0" cellpadding="10" bgcolor="#808080" >
 			<caption>我的标题</caption>
 			<tr valign="center" bgcolor="#808080">
 				<th>姓名</th>
@@ -219,7 +225,10 @@ ins与u标签含义相同-->
 			<tr align="center" height="30">
 				
 				<th colspan="2"> 
-				
+				<ul>
+					<li>苹果</li>
+					<li>香蕉</li>
+				</ul>
 				</th>
 
 			</table>
@@ -228,6 +237,64 @@ ins与u标签含义相同-->
 	
 		</div>
 		
+		<!--列表
+		无序列表ul
+		有序列表ol
+		定义列表dl
+		
+		列表项内部可以使用段落、换行符、图片、链接以及其他列表等等.
+		
+		<ul>的type属性的值有square  circle disc （默认disc）
+		<ul>的type属性的值有1 A I a i   （默认1）
+		
+		
+		-->
+		
+		<ul type="square">
+			<li>抓娃娃</li>
+			<li>小恐龙</li>
+		</ul>
+		
+	<ol type="I" >
+		<li>Coffee</li>
+		<li>Milk</li>
+	</ol>
+	
+	<dl>
+		<dt>Coffee</dt>
+		<dd>hot drink</dd>
+		<dd>cold drink</dd>
+		<dt>Milk</dt>
+		<dd>hot drink</dd>
+	</dl>
+	
+	<dl>
+   <dt>计算机</dt>
+   <dd>用来计算的仪器 ... ...</dd>
+   <dt>显示器</dt>
+   <dd>以视觉方式显示信息的装置 ... ...</dd>
+</dl>
+	
+	<!--div和span
+	
+	HTML 块元素和内联元素
+	
+	块级元素在浏览器显示时，通常会以新行来开始（和结束）。
+例子：<h1>, <p>, <ul>, <table>
+
+内联元素在显示时通常不会以新行开始。
+例子：<b>, <td>, <a>, <img>
+
+<div> 元素是块级元素，它是可用于组合其他 HTML 元素的容器。
+如果与 CSS 一同使用，<div> 元素可用于对大的内容块设置样式属性。
+<div> 元素的另一个常见的用途是文档布局。它取代了使用表格定义布局的老式方法。
+使用 <table> 元素进行文档布局不是表格的正确用法。
+<table> 元素的作用是显示表格化的数据。
+
+<span> 元素是内联元素，可用作文本的容器。
+当与 CSS 一同使用时，<span> 元素可用于为部分文本设置样式属性。
+
+	-->
 		
 	</body>
 	
