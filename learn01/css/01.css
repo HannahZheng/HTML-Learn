@@ -1,10 +1,15 @@
-<html>
-<head>
-<title>外部样式表</title>
-<style>
-p {background: gray;}
-</style>
-</head>
-<body>
-</body>
-</html>
+p {
+	background: red;
+	text-indent: 2em;
+	}
+
+/*body {
+	background-image: url(../img/eg_bg_02.gif);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-attachment: fixed;
+}*/
+
+body {
+	background: gray url(../img/eg_bg_02.gif) no-repeat fixed center;
+}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<script type="text/javascript">
+		function validate_required(field,alerttxt)
+		{
+			with (field){
+				if (value==null||value=="") {
+					alert(alerttxt);
+					return false;
+				} else{
+					return true;
+				}
+			}
+		}
+		
+		function validate_email(field,alerttxt){
+			with(field){
+				apos=value.indexOf("@");
+				dotpos=value.lastIndexOf(".");
+				if(apos<1||dotpos-apos<2){
+					alert(alerttxt);
+					return false;
+				}else{
+					return true;
+				}
+			}
+		}
+		
+		function validate_form (thisform) {
+			with (thisform){
+				if (validate_required(name,"Name must be filled out!")==false) {
+	name.focus();
+	return false;
+				}
+				
+				if (validate_required(email,"Email must be filled out!")==false || validate_email(email,"Email格式不正确")==false) {
+				email.focus();
+				return false;
+				}
+			}
+		}
+	</script>
+
+	<body>
+		<form action="" method="post" onsubmit="return validate_form(this)">
+			Name:<input type="text" name="name" />
+			<br />
+			<br />
+			Email:<input type="text" name="email" />
+			<br />
+			<br />
+			<input type="submit" value="提交" />
+		</form>
+	</body>
+</html>

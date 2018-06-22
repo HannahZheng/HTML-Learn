@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+
+<!--
+JavaScript：写入 HTML 输出
+JavaScript：对事件作出反应
+JavaScript：改变 HTML 内容
+JavaScript：改变 HTML 样式
+JavaScript：验证输入
+
+document.getElementByID("some id")。这个方法是 HTML DOM 中定义的。
+DOM（文档对象模型）是用以访问 HTML 元素的正式 W3C 标准。
+
+-->
+<html>
+
+
+<body>
+
+    <!--
+	请使用 document.write() 仅仅向文档输出写内容。
+如果在文档已完成加载后执行 document.write，整个 HTML 页面将被覆盖：
+	-->
+    <script type="text/javascript">
+        document.write("<h1>This is a heading</h1>")
+    </script>
+
+    <!--
+	alert() 函数在 JavaScript 中并不常用，但它对于代码测试非常方便
+	-->
+    <button type="button" onclick="alert('Welcome!')">点击这里</button>
+
+    <p id="demo">JavaScript 能够改变HTML元素的内容</p>
+
+    <script type="text/javascript">
+        function myFunction() {
+            x = document.getElementById("demo");
+            x.innerHTML = "Hello JavaScript";
+            x.style.color = "red";
+        }
+    </script>
+
+    <button type="button" onclick="myFunction()">改变元素内容</button>
+
+    <script>
+        function changeImage() {
+
+            element = document.getElementById('myImage');
+
+            if (element.src.match("bulbon")) {
+                element.src = "img/eg_bulboff.gif";
+            } else {
+                element.src = "img/eg_bulbon.gif";
+            }
+
+        }
+    </script>
+    <br/>
+    <br/>
+    <img id="myImage" onclick="changeImage()" src="img/eg_bulboff.gif" />
+
+    <p>请输入数字。如果输入值不是数字，浏览器会弹出提示框。</p>
+
+    <input id="mynumber" type="text" />
+
+    <script>
+        function checkNum() {
+            var x = document.getElementById("mynumber").value;
+            if (x == "" || isNaN(x)) {
+                alert("Not Numeric");
+            }
+        }
+    </script>
+
+    <button type="button" onclick="checkNum()">验证数字</button>
+
+    <br/>
+    <br/>
+
+
+
+    <button type="button" onclick="myChangeText()">改变p元素的内容</button>
+    <script src="js/JS-01.js"></script>
+
+</body>
+
+</html>
