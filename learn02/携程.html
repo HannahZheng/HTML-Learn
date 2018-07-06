@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>携程</title>
+
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+				border-width: 0;
+			}
+			
+			html,
+			body {
+				font: 14px "microsoft yahei", "楷体";
+				color: white;
+				min-width: 320px;
+				max-width: 540px;
+				margin: 0 auto;
+			}
+			
+			nav {
+				height: 108px;
+			}
+			
+			img {
+				height: 108px;
+				width: auto;
+			}
+			
+			table {
+				border: 0.5px rgb(203, 203, 203) solid;
+				empty-cells: show;
+				width: 100%;
+				box-sizing: border-box;
+				padding: 5px;
+				flex-direction: row;
+			}
+			
+			table tr {
+				height: 90px;
+				width: 100%;
+				margin-bottom: 5px;
+				display: flex;
+			}
+			
+			table tr td {
+				background: #FF697A;
+				flex: 1;
+				/*				width: 33.3% ;*/
+				text-align: center;
+				/*position: relative;*/
+				padding-top: 10px;
+			}
+			
+			span {
+			/*	position: absolute;*/
+				display: block;
+				top: 10px;
+				
+			}
+			
+			em {
+				background: url(img/ctrip.png) no-repeat 0 -260px;
+				display: block;
+				line-height: 45px;
+				margin: 0 auto;
+				margin-top: -5px;
+				height: 45px;
+				width: 45px;
+			}
+			
+			tr td:nth-child(2) {
+				margin: 0 2px;
+			}
+			td:hover {
+				cursor: pointer;
+			}
+		</style>
+	</head>
+
+	<body>
+		<nav>
+			<img src="img/banner.jpg" />
+		</nav>
+
+		<table>
+			<tr>
+				<td> <span>酒店</span>
+					<em class="iamge"></em>
+				</td>
+				<td> <span>国外酒店</span>
+					<em class="iamge"></em></td>
+				<td> <span>景点</span>
+					<em class="iamge"></em></td>
+			</tr>
+
+			<tr>
+				<td> 酒店 </td>
+				<td>国外酒店</td>
+				<td>景点</td>
+			</tr>
+
+			<tr>
+				<td> 酒店 </td>
+				<td>国外酒店</td>
+				<td>景点</td>
+			</tr>
+
+			<tr>
+				<td> 酒店 </td>
+				<td>国外酒店</td>
+				<td>景点</td>
+			</tr>
+		</table>
+
+	</body>
+
+</html>

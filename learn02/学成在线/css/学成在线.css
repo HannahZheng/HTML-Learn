@@ -1,0 +1,228 @@
+
+/*头部*/
+header {
+	width: 1300px;
+	height: 100px;
+	/*background-color: pink;*/ 
+	margin: 0 auto;
+	padding-top: 30px;
+}
+/*头部logo*/
+header h1 {
+	float: left;
+}
+
+header h1 a {
+	width: 195px;
+	height: 42px;
+	background: url(../imgs/logo.png) no-repeat ;
+	background-size: 100% auto;
+	display: block;
+	text-indent: -990px;
+	overflow: hidden;
+}
+/*头部 导航*/
+header nav {
+	float: left;
+	margin-left: 20px;
+}
+
+header nav li {
+	height: 40px;
+	line-height: 40px;
+	float: left;
+	margin-left: 25px;
+}
+
+header nav li a {
+	display: block;
+	line-height: 40px;
+	font-size: 18px;
+	padding: 0 10px;
+}
+
+header nav li a:hover {
+	border-bottom: 2px solid #00a4ff;
+}
+
+/*搜索栏*/
+.search {
+	width: 410px;
+	height: 40px;
+	background-color: purple;
+	float: left;
+	margin-left: 160px;
+}
+.search input {
+	width: 360px;
+	height: 100%;
+border: 1px deepskyblue solid;
+padding-left: 10px;
+}
+
+.search button {
+	width: 50px;
+	height: 100%;
+	background: url(../imgs/fa-search.png) no-repeat;
+	float:  right;
+}
+/*个人中心*/
+.personal {
+	line-height: 40px;
+	height: 40px;
+	float: right;
+}
+
+.personal dt,.personal dd {
+	float: left;
+}
+
+.personal s {
+	padding: 0 20px;
+	position: relative;
+	
+}
+.personal s::before {
+	content: "";
+	background: red;
+	display: block;
+	width: 6px;
+	height: 6px;
+	border-radius: 50%;
+	position: absolute;
+	right: 15px;
+	top: 0;
+}
+
+.personal span img {
+	border-radius: 50%;
+	margin-right: 10px;
+	transition: all 0.6s;
+}
+.personal span img:hover {
+	transform: rotate(-360deg);
+}
+
+/* banner部分 */
+.banner {
+	height: 420px;
+	background-color: #1c036c;
+}
+.inner {
+	height: 420px;
+	width: 1200px;
+	margin: 0 auto;
+	position: relative;
+}
+
+.inner .left {
+	height: 100%;
+	width: 190px;
+	position: absolute;
+	left: 0;
+	top: 0;
+	padding-top: 20px;
+	background-color: rgba(0,0,0,.3);
+}
+
+.inner .left li {
+	height: 40px;
+	line-height: 40px;
+	padding: 0 20px;
+}
+.inner .left a {
+	display: block;
+	font-size: 14px;
+	color: #fff;
+	position: relative;
+}
+
+.inner .left a:hover {
+	color: #00b4ff;;
+}
+
+.inner .left a span {
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+
+/*主体banner*/
+/*小圆点*/
+.circle {
+	width: 176px;
+	height: 20px;
+	position: absolute;
+	left: 50%;
+	bottom: 15px;
+	margin-left: -88px;
+}
+.circle ul li {
+	float: left;
+	width: 12px;
+	height: 12px;
+	background: rgba(255, 255, 255, 0.4);
+	margin: 0 5px;
+	border-radius: 6px;
+	cursor: pointer;
+	transition: all 0.4s;
+}
+
+.circle ul li:hover {
+	width: 20px;
+	background: white;
+}
+/*课程表*/
+.timebook {
+	width: 228px;
+	height: 300px;
+	position: absolute;
+	right: 0;
+	top: 50%;
+	/* transform: translate(0, -50%); */
+	transform: translateY(-50%);
+	/* 但是y 要大写才可以 */
+	background-color: #fff;
+}
+
+.timebook dl dt {
+	height: 50px;
+	background-color: #9bceea;
+	line-height: 50px;
+	text-align: center;
+	font-weight: 700;
+	color: white;
+	font-size: 18px;
+}
+
+.timebook dd {
+	padding: 15px 20px 0;
+}
+
+.timebook dd li {
+	height: 60px;
+	border-bottom: 1px solid #ccc;
+	padding-top: 6px;
+}
+.timebook dd li:last-child{
+	border-bottom: 0;
+}
+
+.timebook dd li h5 {
+	font-size: 16px;
+	font-weight: normal;
+}
+/*全部课程的按钮*/
+.timebook a {
+	height: 40px;
+	border: 1px solid #22b0ff;
+	color: #22b0ff;
+	display: block;
+	text-align: center;
+	line-height: 40px;
+	font-size: 16px;
+}
+.timebook a:hover {
+	background-color: #22b0ff;
+	color:#fff;
+}
